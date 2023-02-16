@@ -8,10 +8,24 @@ void wprowadzanie( int& a, char& zn, int& h)
     cout<<"wprowadz szerokosc, znak i wysokosc prostokata...\n";
     cin>>a>>zn>>h;
 }
+
+
 void figura()
 {
     cout<<"twoj prostokat: \n";
 }
+
+
+void drukuj_linie(char znak, int dlugosc)
+{
+    for(int powtorzenia = 0; powtorzenia<dlugosc; powtorzenia++)
+    {
+    cout<<znak;
+    }
+    cout<<"\n";
+}
+
+
 void konstrukcja(int szerokosc, char znak, int wysokosc)
 {
     for(int powtorzenia = 0; powtorzenia<wysokosc; powtorzenia++)
@@ -25,6 +39,7 @@ void konstrukcja(int szerokosc, char znak, int wysokosc)
     cout<<"\n";
 }
 //input - szerokosc dolnej podstawy, output -trojkat prostokatny
+
 void trojkat()
 {
     int szerokosc;
@@ -41,12 +56,17 @@ void trojkat()
     }
 }
 
+
 void choinka()
 {
     char znak;
     int h;
-    cout<<"Wprowadz wysokosc trojkata oraz znak...\n";
+    int wysPnia, szerPnia;
+    cout<<"Wprowadz wysokosc choinki oraz znak...\n";
     cin>>h>>znak;
+    cout<<"podaj wysokosc i szerokosc pnia...\n ";
+    cin>>wysPnia;
+    cin>>szerPnia;
     for (int i = 0; i<h; i++)//warunek na wysokosc
     {
         for (int k = 0; k<-i+(h-1); k++)
@@ -61,13 +81,28 @@ void choinka()
         
         cout<<"\n";
     }
-    for (int p = 0; p<h-1; p++)
+    for(int n =0; n<wysPnia;n++)
     {
+        for (int p = 0; p<h-1-szerPnia/2; p++)
+        {
         cout<<" ";
+        }
+        drukuj_linie('#',szerPnia);
     }
-    cout<<"#"<<"\n";
-
 }
+
+
+void pusty_prostokat()
+ {
+
+ }
+
+
+ void szachownica()
+ {
+    
+ }
+
 int main ()
 {
     //char znak;
